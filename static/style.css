@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.header {
+    background-color: #173f5f;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0 0 8px 0;
+    font-size: 30px;
+}
+
+.header p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.form-section {
+    background-color: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form-section h2 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input {
+    padding: 11px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #173f5f;
+}
+
+button {
+    margin-top: 22px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #173f5f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0f2f48;
+}
+
+.result-section {
+    background-color: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.result-section h2 {
+    margin-top: 0;
+}
+
+.rate-container {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.rate-box {
+    flex: 1;
+    background-color: #f4f6f8;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.rate-box p {
+    margin: 5px 0;
+}
+
+.probability {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.win {
+    font-size: 30px;
+    font-weight: bold;
+    color: #16803c;
+}
+
+.loss {
+    font-size: 20px;
+    color: #b33a3a;
+    margin-top: 8px;
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rate-container {
+        flex-direction: column;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+}

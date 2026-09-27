@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cricket Win Probability Predictor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>🏏 Cricket Win Probability Predictor</h1>
+            <p>Estimate the batting team's win probability using Machine Learning</p>
+        </div>
+
+
+        <!-- Input Section -->
+        <div class="form-section">
+
+            <h2>Enter Match Situation</h2>
+
+            <form method="POST">
+
+                <div class="input-grid">
+
+                    <div class="input-group">
+                        <label for="runs_left">Runs Left</label>
+                        <input
+                            type="number"
+                            id="runs_left"
+                            name="runs_left"
+                            min="0"
+                            required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="balls_left">Balls Left</label>
+                        <input
+                            type="number"
+                            id="balls_left"
+                            name="balls_left"
+                            min="0"
+                            max="120"
+                            required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="wickets">Wickets Left</label>
+                        <input
+                            type="number"
+                            id="wickets"
+                            name="wickets"
+                            min="0"
+                            max="10"
+                            required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="target_runs">Target Runs</label>
+                        <input
+                            type="number"
+                            id="target_runs"
+                            name="target_runs"
+                            min="1"
+                            required>
+                    </div>
+
+                </div>
+
+
+                <button type="submit">
+                    Predict Win Probability
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Result Section -->
+        {% if win_probability is defined %}
+
+        <div class="result-section">
+
+            <h2>Prediction Result</h2>
+
+
+            <!-- Run Rates -->
+            <div class="rate-container">
+
+                <div class="rate-box">
+                    <p>Current Run Rate</p>
+                    <strong>{{ current_run_rate }}</strong>
+                </div>
+
+                <div class="rate-box">
+                    <p>Required Run Rate</p>
+                    <strong>{{ required_run_rate }}</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Probability -->
+            <div class="probability">
+
+                <p>Estimated Win Probability</p>
+
+                <div class="win">
+                    {{ win_probability }}%
+                </div>
+
+                <div class="loss">
+                    Loss Probability: {{ loss_probability }}%
+                </div>
+
+            </div>
+
+
+            <!-- Note -->
+            <div class="note">
+                This prediction is an ML-based probability estimate and
+                should not be considered a guaranteed match outcome.
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
